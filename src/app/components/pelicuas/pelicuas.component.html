@@ -1,0 +1,28 @@
+<h1 class="subheader">Listado de Peliculas</h1>
+<h2>{{ titulo }}</h2>
+<div class="center">
+  @for (pelicula of peliculas; track pelicula.title){
+
+
+        <!--Listado articulos-->
+        <div id="articles">
+            <article class="article-item" id="article-template">
+                <div class="image-wrap">
+                    <img src="{{ pelicula.image }}" alt="{{ pelicula.title }}" />
+                </div>
+
+                <h2>{{ pelicula.title }}</h2>
+                <span class="date">
+                    {{ pelicula.description }}
+                </span>
+                <a href="#">Leer más</a>
+
+                <div class="clearfix"></div>
+            </article>
+
+
+        </div>
+
+  }
+
+</div>
