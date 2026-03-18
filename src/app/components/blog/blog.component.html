@@ -1,3 +1,56 @@
-<div id="slider" class="slider-small">
-            <h1>Blog</h1>
+<div class="center">
+  <section id="content">
+    <h1 class="subheader">Blog</h1>
+
+    <div id="articles">
+      <article
+        class="article-item"
+        *ngFor="let article of articles"
+      >
+        <!-- IMAGEN -->
+        <div class="image-wrap">
+          <img
+            [src]="article.image
+              ? (article.image.includes('http')
+                  ? article.image
+                  : url + 'get-image/' + article.image)
+              : 'assets/images/default.jpg'"
+            [alt]="article.title"
+          />
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="article-content">
+          <h2>{{ article.title }}</h2>
+
+          <span class="date">
+            {{ article.date | date:'medium' }}
+          </span>
+
+          <p>{{ article.content }}</p>
+
+          <a href="#">Leer más</a>
+        </div>
+
+        <div class="clearfix"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="nav-blog" class="sidebar-item">
+      <h3>Puedes hacer esto</h3>
+      <a href="#" class="btn btn-success">Crear artículo</a>
+    </div>
+
+    <div id="search" class="sidebar-item">
+      <h3>Buscador</h3>
+      <p>Encuentra el artículo que buscas</p>
+      <form>
+        <input type="text" name="search" />
+        <input type="submit" value="Buscar" class="btn" />
+      </form>
+    </div>
+  </aside>
 </div>

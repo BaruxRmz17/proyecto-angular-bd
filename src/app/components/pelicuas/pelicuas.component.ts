@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pelicula } from '../models/pelicula';
+import { Pelicula } from '../../models/pelicula';
 
 @Component({
   selector: 'app-pelicuas',
